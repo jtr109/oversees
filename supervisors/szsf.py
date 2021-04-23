@@ -25,5 +25,5 @@ def service_restored() -> bool:
 
 if __name__ == '__main__':
     restored = service_restored()
-    if not restored:
-        sys.exit('Still not serving.')
+    # if not restored:
+    #     sys.exit('Still not serving.')
