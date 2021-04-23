@@ -1,9 +1,7 @@
-import sys
-
 import requests
 
 
-def service_restored() -> bool:
+def main() -> bool:
     URL = 'http://www.zjrmfy.suzhou.gov.cn:8089/szsf/'
     headers = {
         'Host': 'www.zjrmfy.suzhou.gov.cn:8089',
@@ -19,11 +17,11 @@ def service_restored() -> bool:
     # If-None-Match: W/"60739c41-375"
     # If-Modified-Since: Mon, 12 Apr 2021 01:02:57 GMT
     response = requests.get(URL, headers=headers)
+    response.raise_for_status()
     body = response.content.decode()
-    return '由于软件后台升级维护，系统暂停服务！' not in body
+    print(body)
+    assert '由于软件后台升级维护，系统暂停服务！' not in body
 
 
 if __name__ == '__main__':
-    restored = service_restored()
-    if not restored:
-        sys.exit('Still not serving.')
+    main()
