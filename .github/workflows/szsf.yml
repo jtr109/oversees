@@ -1,5 +1,6 @@
 name: szsf
 on:
+  push
   schedule:
     - cron: '3,33 * * * *'
 jobs:
