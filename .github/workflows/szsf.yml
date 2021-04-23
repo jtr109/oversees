@@ -1,6 +1,14 @@
 name: szsf
 on: [push]
 jobs:
+  request:
+    name: Request SZSF
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - run: python supervisors/szsf.py
   notify:
     name: Notify
     runs-on: ubuntu-latest
