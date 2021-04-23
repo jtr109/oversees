@@ -1,8 +1,7 @@
 name: szsf
 on:
-  push:
   schedule:
-    - cron: '8,38 * * * *'
+    - cron: '1/5 * * * *'
 jobs:
   request:
     name: Request SZSF
