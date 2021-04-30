@@ -1,8 +1,8 @@
 name: szsf
 on:
   push:
-  schedule:
-    - cron: '*/20 * * * *'
+  # schedule:
+  #   - cron: '*/20 * * * *'
 jobs:
   request:
     name: Request SZSF
